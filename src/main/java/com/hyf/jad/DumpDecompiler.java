@@ -1,9 +1,6 @@
 package com.hyf.jad;
 
-import com.hyf.hotrefresh.HotRefreshManager;
-import com.hyf.hotrefresh.HotRefresher;
-import com.hyf.hotrefresh.InfrastructureJarClassLoader;
-import com.hyf.hotrefresh.Util;
+import com.hyf.hotrefresh.core.util.Util;
 import sun.tools.jar.resources.jar;
 
 import java.io.File;
@@ -208,7 +205,7 @@ public class DumpDecompiler {
 
     public static Instrumentation getInstrumentation() {
         if (instrumentation == null) {
-            instrumentation = Util.getInfrastructureJarClassLoader().install();
+            instrumentation = Util.getInstrumentation();
         }
         return instrumentation;
     }
